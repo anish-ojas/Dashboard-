@@ -1,0 +1,653 @@
+/* PrimeDash
+* 2022-20**
+* Angular + PrimeNG + PrimeFlex
+*/
+// Color Themes
+$primary: #27187e;
+$secondary: #ff8600;
+$territory: #758bfd;
+$light1: #f1f2f6;
+$light2: #ffffff;
+$dark-primary: #0b0722;
+$dark-secondary: #383838;
+
+// Action Colors
+$info: #0dcaf0;
+$success: #198754;
+$warning: #ffc107;
+$danger: #dc3545;
+
+// Font Sizes
+$xSmall: 12px;
+$small: 13px;
+$medium: 14px;
+$large: 16px;
+$xLarge: 20px;
+$heading: 36px;
+
+// Fonts
+
+@font-face {
+  font-family: "Spartan Regular";
+  src: url("./assets/fonts/Spartan-Regular.eot");
+  src: url("./assets/fonts/Spartan-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Spartan-Regular.woff") format("woff"),
+    url("./assets/fonts/Spartan-Regular.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Regular.svg#Spartan-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan Bold";
+  src: url("./assets/fonts/Spartan-Bold.eot");
+  src: url("./assets/fonts/Spartan-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Bold.woff2") format("woff2"), url("./assets/fonts/Spartan-Bold.woff") format("woff"),
+    url("./assets/fonts/Spartan-Bold.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Bold.svg#Spartan-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan ExtraBold";
+  src: url("./assets/fonts/Spartan-ExtraBold.eot");
+  src: url("./assets/fonts/Spartan-ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Spartan-ExtraBold.woff") format("woff"),
+    url("./assets/fonts/Spartan-ExtraBold.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-ExtraBold.svg#Spartan-ExtraBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan Thin";
+  src: url("./assets/fonts/Spartan-Thin.eot");
+  src: url("./assets/fonts/Spartan-Thin.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Thin.woff2") format("woff2"), url("./assets/fonts/Spartan-Thin.woff") format("woff"),
+    url("./assets/fonts/Spartan-Thin.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Thin.svg#Spartan-Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan ExtraLight";
+  src: url("./assets/fonts/Spartan-ExtraLight.eot");
+  src: url("./assets/fonts/Spartan-ExtraLight.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-ExtraLight.woff2") format("woff2"),
+    url("./assets/fonts/Spartan-ExtraLight.woff") format("woff"),
+    url("./assets/fonts/Spartan-ExtraLight.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-ExtraLight.svg#Spartan-ExtraLight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan Light";
+  src: url("./assets/fonts/Spartan-Light.eot");
+  src: url("./assets/fonts/Spartan-Light.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Light.woff2") format("woff2"), url("./assets/fonts/Spartan-Light.woff") format("woff"),
+    url("./assets/fonts/Spartan-Light.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Light.svg#Spartan-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan Medium";
+  src: url("./assets/fonts/Spartan-Medium.eot");
+  src: url("./assets/fonts/Spartan-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Medium.woff2") format("woff2"), url("./assets/fonts/Spartan-Medium.woff") format("woff"),
+    url("./assets/fonts/Spartan-Medium.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Medium.svg#Spartan-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan SemiBold";
+  src: url("./assets/fonts/Spartan-SemiBold.eot");
+  src: url("./assets/fonts/Spartan-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/Spartan-SemiBold.woff") format("woff"),
+    url("./assets/fonts/Spartan-SemiBold.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-SemiBold.svg#Spartan-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spartan Black";
+  src: url("./assets/fonts/Spartan-Black.eot");
+  src: url("./assets/fonts/Spartan-Black.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Spartan-Black.woff2") format("woff2"), url("./assets/fonts/Spartan-Black.woff") format("woff"),
+    url("./assets/fonts/Spartan-Black.ttf") format("truetype"),
+    url("./assets/fonts/Spartan-Black.svg#Spartan-Black") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Margins
+// Margin Top 1px - 50px
+@for $i from 1 through 50 {
+  .m-t-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+}
+
+// Margin Right 1px - 50px
+@for $i from 1 through 50 {
+  .m-r-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+}
+
+// Margin Bottom 1px - 50px
+@for $i from 1 through 50 {
+  .m-b-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+}
+
+// Margin Left 1px - 50px
+@for $i from 1 through 50 {
+  .m-l-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+}
+
+// Paddings
+// Padding Top 1px - 50px
+@for $i from 0 through 50 {
+  .p-t-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+}
+
+// Padding Right 1px - 50px
+@for $i from 0 through 50 {
+  .p-r-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+}
+
+// Padding Bottom 1px - 50px
+@for $i from 0 through 50 {
+  .p-b-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+}
+
+// Padding Left 1px - 50px
+@for $i from 0 through 50 {
+  .p-l-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: 0 0;
+}
+::-webkit-scrollbar-thumb {
+  background: $dark-primary;
+  height: 20vh;
+}
+// Main Styles
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background-color: $light2;
+  font-family: "Spartan Medium";
+  font-size: $small;
+  color: $dark-secondary;
+  letter-spacing: normal;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  unicode-bidi: embed;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+button,
+input,
+label,
+select,
+td,
+textarea,
+.form-control,
+.btn {
+  font-family: "Spartan Medium", sans-serif;
+  font-size: $medium;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Spartan Bold", sans-serif;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+section {
+  padding: 50px 30px;
+
+  .title {
+    font: $large "Spartan Bold";
+    color: $dark-primary;
+    margin-bottom: 18px;
+  }
+  &:nth-child(even) {
+    background-color: $light1;
+  }
+  &:nth-child(odd) {
+    background-color: $light2;
+  }
+}
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-center-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-center-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-center-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.flex-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.flex-start-around {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.flex-end-between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.flex-start-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flex-start-end {
+  display: flex;
+  align-items: start;
+  justify-content: flex-end;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-between {
+  justify-content: space-between;
+}
+/* Sidebar */
+/*
+ * Navbar*/
+
+header.navbar,
+.sidebar {
+  background-color: $dark-primary !important;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background-image: url(../src/assets/images/sidebar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 0;
+  background-blend-mode: luminosity;
+
+  .nav-link {
+    color: $light1;
+    cursor: pointer;
+    &:hover,
+    &.nav-link.active {
+      background-color: $secondary;
+      .feather {
+        color: inherit;
+      }
+    }
+  }
+}
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+.navbar {
+  .navbar-toggler {
+    top: 0.25rem;
+    right: 1rem;
+  }
+  .form-control {
+    padding: 0.75rem 1rem 0.75rem 2rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+}
+.form-control-dark {
+  color: $light2;
+  background-color: rgb($dark-secondary, 25%);
+  border-color: rgb($dark-secondary, 25%);
+  &:focus {
+    background-color: rgb($dark-secondary, 15%);
+    border-color: transparent;
+    box-shadow:  none !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+// Dashboard Css
+.statisticsBox {
+  background-color: $light2;
+  background-size: 300% 300%;
+  padding: 25px 20px;
+  border: 1px solid rgb($dark-primary, 15%);
+  border-radius: 2px;
+  box-shadow: 0 10px 10px 0 $light1;
+  cursor: pointer;
+  transition: 0.6s linear;
+  animation: liveWallpaper 30s ease 0s alternate infinite none running;
+
+  .contentContainer {
+    @extend .flex-center-between;
+
+    .content {
+      span {
+        font: $xSmall - 2px "Spartan SemiBold", capitalize;
+        display: block;
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: $xLarge + 5px;
+        color: $dark-primary;
+      }
+    }
+    .icon {
+      color: $light1;
+      $wh: 45px;
+      width: $wh;
+      height: $wh;
+      border-radius: 50%;
+      @extend .flex-center;
+
+      i {
+        font-size: $xLarge;
+      }
+    }
+  }
+
+  &.box1 {
+    .icon {
+      background-color: #045de9;
+      background: linear-gradient(135deg, #f36265 0%, #961276 100%);
+    }
+  }
+  &.box2 {
+    .icon {
+      background-color: #0beef9;
+      background: linear-gradient(135deg, #f5515f 0%, #a1051d 100%);
+    }
+  }
+  &.box3 {
+    .icon {
+      background-color: #6617cb;
+      background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+    }
+  }
+  &.box4 {
+    .icon {
+      background-color: #523a78;
+      background: linear-gradient(135deg, #17ead9 0%, #6078ea 100%);
+    }
+  }
+  @keyframes liveWallpaper {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  &:hover {
+    background-color: $dark-primary;
+    transform: translateY(-6px);
+
+    * {
+      color: $light2 !important;
+    }
+  }
+}
+
+.p-datatable {
+  // border: 1px solid rgb($dark-primary, 15%);
+  // .p-datatable-thead > tr > th {
+  //   background: $dark-primary !important;
+  //   color: $light2 !important;
+  // }
+
+  a {
+    color: $dark-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    &.actionBtn {
+      font-size: $small;
+      color: $light2;
+      text-align: center;
+      $wh: 30px;
+      width: $wh;
+      height: $wh;
+      padding: 5px;
+      margin: 2px;
+      cursor: pointer;
+
+      &.save {
+        background-color: $success;
+      }
+      &.delete {
+        background-color: $danger;
+      }
+    }
+  }
+}

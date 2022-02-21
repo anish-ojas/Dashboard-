@@ -1,0 +1,117 @@
+<section class="statistics">
+  <h2 class="title">Dashboard</h2>
+  <div class="row">
+    <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-3" pRipple>
+      <div class="statisticsBox box1">
+        <div class="contentContainer">
+          <div class="content">
+            <span>Support Tickets</span>
+            <h3>05</h3>
+          </div>
+          <div class="icon">
+            <i class="ri-message-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-3">
+      <div class="statisticsBox box2" pRipple>
+        <div class="contentContainer">
+          <div class="content">
+            <span>Contact Request</span>
+            <h3>100</h3>
+          </div>
+          <div class="icon">
+            <i class="ri-mail-send-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-3">
+      <div class="statisticsBox box3" pRipple>
+        <div class="contentContainer">
+          <div class="content">
+            <span>Project Enquiries</span>
+            <h3>06</h3>
+          </div>
+          <div class="icon">
+            <i class="ri-suitcase-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-3">
+      <div class="statisticsBox box4" pRipple>
+        <div class="contentContainer">
+          <div class="content">
+            <span>Customize Solutions</span>
+            <h3>100</h3>
+          </div>
+          <div class="icon">
+            <i class="ri-sound-module-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chart">
+  <div class="row">
+    <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+      <h2 class="title">Feb Revenue</h2>
+      <p-chart type="line" [data]="data"></p-chart>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+      <h2 class="title">Jan Revenue</h2>
+      <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
+    <!-- <div class="col-md-12 col-lg-3 col-xl-3 col-xxl-3 mb-3">
+      <p-chart type="doughnut" [data]="data" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
+    </div> -->
+  </div>
+</section>
+<section class="users">
+  <div class="row">
+    <h2 class="title">New Users</h2>
+    <div class="table-responsive">
+      <p-table #dt1  [value]="contacts" styleClass="p-datatable-striped p-datatable-gridlines" [scrollable]="true"  scrollHeight="400px" scrollDirection="both" sortMode="multiple" [paginator]="true" [rows]="rows" [showCurrentPageReport]="true" [(first)]="first" responsiveLayout="scroll"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+      <!-- <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template> -->
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="code"  style="width:100px" class="text-center">#<p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="name" style="width:250px">Name <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="email" style="width:250px">Email <p-sortIcon field="email"></p-sortIcon></th>
+            <th pSortableColumn="contact" style="width:250px">Contact No <p-sortIcon field="contact"></p-sortIcon></th>
+            <th pSortableColumn="city" style="width:250px">City <p-sortIcon field="city"></p-sortIcon></th>
+            <th pSortableColumn="message" style="width:250px">Message <p-sortIcon field="message"></p-sortIcon></th>
+            <th pSortableColumn="" style="width:100px" alignFrozen="right" pFrozenColumn>Action <p-sortIcon field=""></p-sortIcon></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-contact>
+          <tr>
+            <td style="width:100px" class="text-center">{{contact.code}}</td>
+            <td style="width:250px">{{contact.name}}</td>
+            <td style="width:250px"><i class="ri-message-3-line"></i> <a href="mailto:{{contact.email}}"> {{contact.email}}</a></td>
+            <td style="width:250px"><i class="ri-phone-line"></i> <a href="tel:+91{{contact.contact}}"> {{contact.contact}}</a></td>
+            <td style="width:250px">{{contact.city}}</td>
+            <td style="width:250px">{{contact.message}}</td>
+            <td style="width:100px" alignFrozen="right"  pFrozenColumn><a class="actionBtn save" title="Save to contact list"><i class="ri-check-fill"></i></a>
+              <a class="actionBtn delete" title="Delete record"><i class="ri-delete-bin-2-fill"></i></a>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+  </div>
+</section>
